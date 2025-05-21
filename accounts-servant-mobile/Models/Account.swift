@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Account {
+struct Account : Hashable,Equatable {
     var id: String = UUID().uuidString
     var name: String = "default"
     var moneyIn : Double = 0.0

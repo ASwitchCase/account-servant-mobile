@@ -15,12 +15,14 @@ struct DefaultButtonStyle: ButtonStyle {
             label
             Spacer()
         }
+        .cornerRadius(5)
         .font(.system(.title, design: .rounded, weight: .bold))
-        .foregroundColor(.white)
-        .padding()
+        .foregroundColor(.black)
+        .padding(10)
         .background {
-            RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(.blue)
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(.black, lineWidth: 2)
+                .foregroundColor(.white)
         }
         .scaleEffect(x: configuration.isPressed ? 0.96 : 1, y: configuration.isPressed ? 0.96 : 1) 
     }

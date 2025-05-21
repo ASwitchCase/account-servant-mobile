@@ -17,34 +17,34 @@ struct TransactionView: View {
             switch transaction.code {
                 case .C:
                 Circle()
-                    .frame(width: 50)
+                    .frame(width: 45)
                     .overlay(
                         Image(systemName: "dollarsign.ring")
-                            .font(.system(size: 44))
+                            .font(.system(size: 30))
                             .foregroundColor(.white)
                     )
                 case .D:
                 Circle()
-                    .frame(width: 50)
+                    .frame(width: 45)
                     .overlay(
                         Image(systemName: "bahtsign.bank.building")
-                            .font(.system(size: 44))
+                            .font(.system(size: 30))
                             .foregroundColor(.white)
                     )
                 case .E:
                 Circle()
-                    .frame(width: 50)
+                    .frame(width: 45)
                     .overlay(
                         Image(systemName: "dollarsign.circle")
-                            .font(.system(size: 44))
+                            .font(.system(size: 30))
                             .foregroundColor(.white)
                     )
                 case .W:
                 Circle()
-                    .frame(width: 50)
+                    .frame(width: 45)
                     .overlay(
                         Image(systemName: "globe.americas")
-                            .font(.system(size: 44))
+                            .font(.system(size: 30))
                             .foregroundColor(.white)
                     )
             }
@@ -55,8 +55,6 @@ struct TransactionView: View {
                 Text("\(transaction.date)")
                     .font(.subheadline)
             }.padding(5)
-            
-            Button(""){}
             
         }
     }
