@@ -16,7 +16,7 @@ struct DefaultButtonStyle: ButtonStyle {
             Spacer()
         }
         .cornerRadius(5)
-        .font(.system(.title, design: .rounded, weight: .bold))
+        .font(.system(.title, weight: .bold))
         .foregroundColor(.black)
         .padding(10)
         .background {
@@ -24,6 +24,7 @@ struct DefaultButtonStyle: ButtonStyle {
                 .stroke(.black, lineWidth: 2)
                 .foregroundColor(.white)
         }
-        .scaleEffect(x: configuration.isPressed ? 0.96 : 1, y: configuration.isPressed ? 0.96 : 1) 
+        .scaleEffect(x: configuration.isPressed ? 0.96 : 1, y: configuration.isPressed ? 0.96 : 1)
+        .padding(5)
     }
 }

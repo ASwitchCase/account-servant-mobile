@@ -50,7 +50,7 @@ struct TransactionView: View {
             }
             
             VStack(alignment: .leading){
-                Text("Transaction:\(transaction.description)")
+                Text("\(transaction.description)")
                     .font(.headline)
                 Text("\(transaction.date)")
                     .font(.subheadline)

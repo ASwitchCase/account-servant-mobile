@@ -9,55 +9,26 @@ import SwiftUICore
 import SwiftUI
 
 struct TransactionsPage : View {
-    @State private var transactions: [Transaction] = [
-        Transaction(
-            description:"KH construction",
-            code:.C
-        ),
-        Transaction(
-            description:"World Wide Work",
-            code:.W
-        ),
-        Transaction(
-            description:"Bank Deposit",
-            code:.D
-        ),
-        Transaction(
-            description:"Check #1234",
-            code:.E
-        )
-    ]
+    
+    @State var report: AccountsReport
     
     var body: some View {
         VStack {
-            
-            Button("Add Transaction") {
-                print("pressed")
-            }.buttonStyle(DefaultButtonStyle())
-            
-            NavigationStack {
+                Button("Add Transaction") {
+                    print("pressed")
+                }.buttonStyle(DefaultButtonStyle())
+                
                 List{
                     Section("Transactions"){
-                        ForEach(transactions, id:\.id) { transaction in
-                            NavigationLink(value: transaction){
+                        ForEach(report.transactions, id:\.id) { transaction in
+                            NavigationLink(destination: AccountView(transaction: transaction)){
                                 TransactionView(transaction: transaction)
                             }
                         }
                     }
                 }
-                .navigationTitle("March Transactions")
-                .navigationDestination(for: Transaction.self){ Transaction in
-                    Text("\(Transaction.description)")
-                }
             }
-            .background {
-                RoundedRectangle(cornerRadius: 5)
-                    .stroke(.black, lineWidth: 2)
-                    .foregroundColor(.white)
-            }
-            .frame(maxHeight:500)
+            .frame(maxHeight:900)
             .scrollContentBackground(.hidden)
-        }
-        .padding(5)
     }
 }

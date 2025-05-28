@@ -17,8 +17,8 @@ struct Transaction : Identifiable,Hashable {
     
     var description: String = ""
     var code: TransactionCode = .C
-    var receipts: Account = Account(id: UUID().uuidString, name: "Receipts")
-    var primaryAccount: Account = Account(id: UUID().uuidString, name: "Primary")
-    var secondaryAccount: Account? = Optional.none
+    var fromBoxes: Account = Account(id: UUID().uuidString, name: "Receipts from boxes")
+    var primaryAccount: Account = Account(id: UUID().uuidString, name: "Primary Account")
+    var secondaryAccount: Account = Account(id: UUID().uuidString, name: "Secondary Account")
 
 }
