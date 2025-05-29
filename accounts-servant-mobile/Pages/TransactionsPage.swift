@@ -11,11 +11,12 @@ import SwiftUI
 struct TransactionsPage : View {
     
     @State var report: AccountsReport
+    @State private var showAddTransactionSheet: Bool = false
     
     var body: some View {
         VStack {
                 Button("Add Transaction") {
-                    print("pressed")
+                    showAddTransactionSheet = true
                 }.buttonStyle(DefaultButtonStyle())
                 
                 List{
@@ -30,5 +31,8 @@ struct TransactionsPage : View {
             }
             .frame(maxHeight:900)
             .scrollContentBackground(.hidden)
+            .sheet(isPresented:$showAddTransactionSheet){
+                AddTransactionSheetView()
+            }
     }
 }
